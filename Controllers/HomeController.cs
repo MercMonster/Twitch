@@ -40,7 +40,7 @@ namespace Twitch.Controllers
        [HttpPost]
        public ActionResult streamSuggest(string suggestion)
         {
-            ViewBag.Message = "Enter a stream or game suggestion";
+        
             ViewBag.Suggestion = suggestion;
             return View();
         }
