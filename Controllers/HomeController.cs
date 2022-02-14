@@ -17,7 +17,7 @@ namespace Twitch.Controllers
 
         
 
-        public IActionResult Index(UserModel u)
+        public IActionResult Index()
         {
          
             
@@ -32,17 +32,10 @@ namespace Twitch.Controllers
       
      
 
-        public class UserModel
-        {
-            public string Suggestion { get; set; }
-        }
-
        [HttpPost]
-       public ActionResult streamSuggest(string suggestion)
+       public ActionResult Index(Suggestion s)
         {
-        
-            ViewBag.Suggestion = suggestion;
-            return View();
+            return View(s);
         }
 
         

@@ -1,6 +1,10 @@
-﻿@{
+﻿@using Twitch.Models
+@model Suggestion
+
+@{
     ViewData["Title"] = "Welcome";
 }
+
 
 
 <div class ="text-lg-start">
@@ -65,28 +69,20 @@
 </div>
 
 <div class="container">
-    <form method="post">
-
-
-
     
-    <div class = "col-7">
 
-        Enter a suggestion or stream improvements or games: 
-    @ViewBag.Message
-    @Html.TextBox("Suggestion")
-        
-        @if (!String.IsNullOrEmpty(ViewBag.Suggestion))
-    {
-        <h3>
-            Your Suggestion is @ViewBag.Suggestion
-        </h3>
-    }
+       @using (Html.BeginForm("Index","Home",FormMethod.Post))
+        {
+            <span> Enter a Suggestion to improve stream:</span> @Html.TextBoxFor(m => m.suggestion) <br />
 
-    <input type="submit" value="submit" name="btn" />
-        
+            <input id ="submit" type = "submit" value= "submit"/>
+        }
+
+        <hr />
+
+        <strong> Suggestion: </strong> @Html.DisplayFor(m=>m.suggestion)
     </div>
-    </form>
+    
 
 </div>
    
