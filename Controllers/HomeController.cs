@@ -37,13 +37,16 @@ namespace Twitch.Controllers
             public string Suggestion { get; set; }
         }
 
-        public class suggestionButton
+       [HttpPost]
+       public ActionResult streamSuggest(string suggestion)
         {
-            public string suggestionType { get; set; }
-
+            ViewBag.Message = "Enter a stream or game suggestion";
+            ViewBag.Suggestion = suggestion;
+            return View();
         }
 
-       
+        
+
 
 
 
