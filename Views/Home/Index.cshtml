@@ -1,32 +1,51 @@
 ﻿@using Twitch.Models
 @model Suggestion
 
+<style typeof="text/css">
+    body{ background: black !important}
+    
+</style>
+
+
+
 @{
     ViewData["Title"] = "Welcome";
 }
 
 
 
-<div class ="text-lg-start">
 
+<div class ="text-lg-start">
+    
     <div class ="img-fluid">
         <img src = "~/Images/Background.png " alt = " " style = "width: 1200px; height: 300px"/> <br />
    </div>
 
-   <h2 class="display-4">Welcome to Merc's Page </h2>
+   <h2 class="border-4 text-light" >Welcome to Merc's Page </h2>
 
 </div> 
 
 
 
 
-
-
 <div class = "container">
      
-            <div class="row">
+            <div class="col">
+
+                <div class="col-4"> 
+                        <div class="p-5 my-4 bg-black text-center ">
+                        
+
+                         
+     
+                          <a href="http://twitch.tv/MercMonst3r"> <img  src= "~/Images/test.png " alt = " " style = "width: 300px; height: 300px"/>  <br/></a>
+                          <a class = text-light"> Twitch Page</a>
+                    </div>
+
+                </div>
+
                 <div class="col-md-4">
-                  <div class="p-5 my-4 bg-dark rounded-3">
+                  <div class="p-5 my-4 bg-dark rounded-3" >
 
                  
                     <h3> <a class ="text-light">Schedule </a></h3>
@@ -42,20 +61,17 @@
                     </div>
                 </div>
 
-                    <div class="col-4"> 
-                        <div class="p-5 my-4 bg-dark rounded-3">
-                        
-
-                         
-     
-                          <a href="http://twitch.tv/MercMonst3r"> <img  src= "~/Images/test.png " alt = " " style = "width: 150px; height: 150px"/>  <br/></a>
-                          <a class = text-light"> Twitch Page</a>
-                    </div>
-
-                </div>
+                   
                   
-                    <div class="col-md-4" >
-                         <div class="p-5 my-4 bg-dark rounded-3">
+                    
+               
+
+
+               
+                   
+            
+                <div class="col-md-4">
+               <div class="p-5 my-4 bg-dark rounded-3">
                     <h3><a class = "text-light"> About Me</a></h3>
                     <p>
                         <a class="text-light">Name: Dustin Lee</a> <br/>
@@ -65,27 +81,25 @@
                         
                      </p>
                     </div>
-
-                   </div>
-               
-                   
+                </div>
             </div>
+  </div> 
     
-</div>
+
 
 <div class="container">
     
 
        @using (Html.BeginForm("Index","Home",FormMethod.Post))
         {
-            <span> Enter a Suggestion to improve stream:</span> @Html.TextBoxFor(m => m.suggestion) <br />
+            <span class="text-light"> Enter a Suggestion to improve stream:</span> @Html.TextBoxFor(m => m.suggestion) <br />
 
             <input id ="submit" type = "submit" value= "submit"/>
         }
 
         <hr />
 
-        <strong> Suggestion: </strong> @Html.DisplayFor(m=>m.suggestion)
+        <strong class="text-light"> Suggestion: </strong> @Html.DisplayFor(m=>m.suggestion)
     </div>
     
 
